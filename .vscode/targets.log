@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Aug 15 10:17:15 2022
+# Make data base, printed on Mon Aug 15 11:36:11 2022
 
 # Variables
 
@@ -53,7 +53,7 @@ XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-f67bd50e-f365-41aa-8abc-4a7cab254152.sock
+VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-eff2af3e-f0f1-4d24-a17f-c0393de25d0f.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -67,7 +67,7 @@ PWD = /home/mark_shkuro/frontend-project-lvl2
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/11_interop
+WSL_INTEROP = /run/WSL/1585_interop
 # environment
 PULSE_SERVER = /mnt/wslg/PulseServer
 # environment
@@ -146,10 +146,8 @@ LANG = C
 TERM = xterm-256color
 # environment
 WSL_DISTRO_NAME = Ubuntu-20.04
-# environment
-MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=68/1024=7%, Rehash=0, Collisions=4/92=4%
+# Load=67/1024=7%, Rehash=0, Collisions=4/91=4%
 
 # Pattern-specific Variable Values
 
@@ -212,6 +210,6 @@ test:
 # strcache performance: lookups = 23 / hit rate = 21%
 # hash-table stats:
 # Load=18/8192=0%, Rehash=0, Collisions=1/23=4%
-# Finished Make data base on Mon Aug 15 10:17:15 2022
+# Finished Make data base on Mon Aug 15 11:36:11 2022
 
  
