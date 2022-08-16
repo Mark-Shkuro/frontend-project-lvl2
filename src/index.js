@@ -2,7 +2,7 @@ import _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
 
-const preparePath = (file) => JSON.parse(fs.readFileSync(path.resolve(process.cwd(), file)));
+const prepareFile = (file) => JSON.parse(fs.readFileSync(path.resolve(process.cwd(), file)));
 
 const diffLogic = (file1, file2) => {
   const file1Cp = _.clone(file1);
@@ -24,7 +24,7 @@ const diffLogic = (file1, file2) => {
 };
 
 const genDiff = (path1, path2) => {
-  return diffLogic(preparePath(path1), preparePath(path2));
+  return diffLogic(prepareFile(path1), prepareFile(path2));
 };
 
 export default genDiff;
