@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Aug 15 11:36:11 2022
+# Make data base, printed on Tue Aug 16 10:39:22 2022
 
 # Variables
 
@@ -53,7 +53,7 @@ XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-eff2af3e-f0f1-4d24-a17f-c0393de25d0f.sock
+VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-02b44e56-04bb-4a02-ac00-99c509259007.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -67,7 +67,7 @@ PWD = /home/mark_shkuro/frontend-project-lvl2
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/1585_interop
+WSL_INTEROP = /run/WSL/11_interop
 # environment
 PULSE_SERVER = /mnt/wslg/PulseServer
 # environment
@@ -146,8 +146,10 @@ LANG = C
 TERM = xterm-256color
 # environment
 WSL_DISTRO_NAME = Ubuntu-20.04
+# environment
+MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=67/1024=7%, Rehash=0, Collisions=4/91=4%
+# Load=68/1024=7%, Rehash=0, Collisions=4/92=4%
 
 # Pattern-specific Variable Values
 
@@ -155,9 +157,9 @@ WSL_DISTRO_NAME = Ubuntu-20.04
 
 # Directories
 
-# . (device 2080, inode 81371): 11 files, no impossibilities.
+# . (device 2080, inode 81371): 12 files, no impossibilities.
 
-# 11 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -204,12 +206,12 @@ test:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 18 / storage = 164 B / avg = 9 B
-# current buf: size = 8162 B / used = 164 B / count = 18 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 19 / storage = 171 B / avg = 9 B
+# current buf: size = 8162 B / used = 171 B / count = 19 / avg = 9 B
 
-# strcache performance: lookups = 23 / hit rate = 21%
+# strcache performance: lookups = 24 / hit rate = 20%
 # hash-table stats:
-# Load=18/8192=0%, Rehash=0, Collisions=1/23=4%
-# Finished Make data base on Mon Aug 15 11:36:11 2022
+# Load=19/8192=0%, Rehash=0, Collisions=1/24=4%
+# Finished Make data base on Tue Aug 16 10:39:22 2022
 
  

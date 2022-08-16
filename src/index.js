@@ -1,17 +1,10 @@
-const _ = require('lodash');
-const file1 = {
-    "host": "hexlet.io",
-    "timeout": 50,
-    "proxy": "123.234.53.22",
-    "follow": false
-  };
-const file2 = {
-    "timeout": 20,
-    "verbose": true,
-    "host": "hexlet.io"
-    };
+import _ from 'lodash';
+import fs from 'fs';
+import path from 'path';
 
-const genDiff = (file1, file2) => {
+const preparePath = (file) => JSON.parse(fs.readFileSync(path.resolve(process.cwd(), file)));
+
+const diffLogic = (file1, file2) => {
   const file1Cp = _.clone(file1);
   const file2Cp = _.clone(file2);
   const key1 = Object.keys(file1Cp);
@@ -30,4 +23,8 @@ const genDiff = (file1, file2) => {
   return result.join(`\n`);
 };
 
-console.log(genDiff(file1, file2));
+const genDiff = (path1, path2) => {
+  return diffLogic(preparePath(path1), preparePath(path2));
+};
+
+export default genDiff;
