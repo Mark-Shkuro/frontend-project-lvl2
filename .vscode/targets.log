@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Aug 16 10:39:22 2022
+# Make data base, printed on Wed Aug 17 16:47:51 2022
 
 # Variables
 
@@ -53,7 +53,7 @@ XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-02b44e56-04bb-4a02-ac00-99c509259007.sock
+VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-0bdbf92a-a8fb-4383-9c68-0f83021b4bea.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -67,7 +67,7 @@ PWD = /home/mark_shkuro/frontend-project-lvl2
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/11_interop
+WSL_INTEROP = /run/WSL/37_interop
 # environment
 PULSE_SERVER = /mnt/wslg/PulseServer
 # environment
@@ -157,9 +157,9 @@ MOTD_SHOWN = update-motd
 
 # Directories
 
-# . (device 2080, inode 81371): 12 files, no impossibilities.
+# . (device 2080, inode 81371): 13 files, no impossibilities.
 
-# 12 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -206,12 +206,12 @@ test:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 19 / storage = 171 B / avg = 9 B
-# current buf: size = 8162 B / used = 171 B / count = 19 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 20 / storage = 175 B / avg = 8 B
+# current buf: size = 8162 B / used = 175 B / count = 20 / avg = 8 B
 
-# strcache performance: lookups = 24 / hit rate = 20%
+# strcache performance: lookups = 25 / hit rate = 20%
 # hash-table stats:
-# Load=19/8192=0%, Rehash=0, Collisions=1/24=4%
-# Finished Make data base on Tue Aug 16 10:39:22 2022
+# Load=20/8192=0%, Rehash=0, Collisions=1/25=4%
+# Finished Make data base on Wed Aug 17 16:47:51 2022
 
  
