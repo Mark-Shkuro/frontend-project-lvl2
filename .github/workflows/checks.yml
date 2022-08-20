@@ -23,19 +23,9 @@ jobs:
         run: make lint
       - name: test
         run: make test
-        coverage:
-    needs: [ test ]
-    name: coverage
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - uses: actions/setup-node@master
-      with:
-        node-version: '12'
-    - name: test-coverage
-    - uses: paambaati/codeclimate-action@v3.0.0
-      env:
-        CC_TEST_REPORTER_ID: f8062f0f57322114dfd7a7d48960990492249708a301eca5688560fdbd623c09
-      with:
-        make test-coverage
-        debug: true
+      - name: test-coverage
+      - uses: paambaati/codeclimate-action@v3.0.0
+        env:
+          CC_TEST_REPORTER_ID: f8062f0f57322114dfd7a7d48960990492249708a301eca5688560fdbd623c09
+        with:
+          make test-coverage

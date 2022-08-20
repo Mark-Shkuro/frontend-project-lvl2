@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>21/21</span>
+                <span class='fraction'>24/24</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>16/16</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
@@ -88,15 +88,19 @@
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -111,6 +115,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import _ from 'lodash';
@@ -119,23 +131,29 @@ import path from 'path';
 &nbsp;
 const prepareFile = (file) =&gt; JSON.parse(fs.readFileSync(path.resolve(process.cwd(), file)));
 const copyKeys = (file1, file2) =&gt; _.sortBy(_.union(Object.keys(file1), Object.keys(file2)));
-const diffLogic = (file1, file2) =&gt; {
-  const file1Cp = _.clone(file1);
-  const file2Cp = _.clone(file2);
-  const sortedUnionKeys = copyKeys(file1Cp, file2Cp);
-  const result = sortedUnionKeys.reduce((acc, key) =&gt; {
-    if (_.has(file1Cp, key) &amp;&amp; _.has(file2Cp, key) &amp;&amp; file1[key] === file2[key]) acc.push(`  ${key} : ${file1Cp[key]}`);
-    else if (!_.has(file2Cp, key)) acc.push(`- ${key} : ${file1Cp[key]}`);
-    else if (_.has(file1Cp, key) &amp;&amp; _.has(file2Cp, key) &amp;&amp; file1[key] !== file2[key]) {
-      acc.push(`- ${key} : ${file1Cp[key]}`);
-      acc.push(`+ ${key} : ${file2Cp[key]}`);
-    } else acc.push(`+ ${key} : ${file2Cp[key]}`);
+&nbsp;
+const diffLogic = (file1, file2, keys) =&gt; {
+  const result = keys.reduce((acc, key) =&gt; {
+    if (_.has(file1, key) &amp;&amp; _.has(file2, key) &amp;&amp; file1[key] === file2[key]) acc.push(`  ${key} : ${file1[key]}`);
+    else if (!_.has(file2, key)) acc.push(`- ${key} : ${file1[key]}`);
+    else if (_.has(file1, key) &amp;&amp; _.has(file2, key) &amp;&amp; file1[key] !== file2[key]) {
+      acc.push(`- ${key} : ${file1[key]}`);
+      acc.push(`+ ${key} : ${file2[key]}`);
+    } else acc.push(`+ ${key} : ${file2[key]}`);
     return acc;
   }, []);
   return result.join('\n');
 };
 &nbsp;
-const genDiff = (path1, path2) =&gt; diffLogic(prepareFile(path1), prepareFile(path2));
+const checkDiff = (file1, file2) =&gt; {
+  const file1Cp = _.clone(file1);
+  const file2Cp = _.clone(file2);
+  const sortedUnionKeys = copyKeys(file1Cp, file2Cp);
+  const result = diffLogic(file1Cp, file2Cp, sortedUnionKeys);
+  return result;
+};
+&nbsp;
+const genDiff = (path1, path2) =&gt; checkDiff(prepareFile(path1), prepareFile(path2));
 &nbsp;
 export default genDiff;
 &nbsp;</pre></td></tr></table></pre>
@@ -145,7 +163,7 @@ export default genDiff;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-08-20T12:51:42.709Z
+                at 2022-08-20T13:40:50.247Z
             </div>
         <script src="prettify.js"></script>
         <script>
