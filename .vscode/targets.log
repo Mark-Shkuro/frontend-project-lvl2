@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Aug 20 15:14:45 2022
+# Make data base, printed on Mon Aug 22 19:05:33 2022
 
 # Variables
 
@@ -51,7 +53,7 @@ XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-8a2fd2c2-d38c-4a83-ad74-5a74f1295678.sock
+VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-7c953f60-8fb6-4faa-92e3-4ffa2ae6447c.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -65,7 +67,7 @@ PWD = /home/mark_shkuro/frontend-project-lvl2
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/37_interop
+WSL_INTEROP = /run/WSL/15772_interop
 # environment
 PULSE_SERVER = /mnt/wslg/PulseServer
 # environment
@@ -153,9 +155,9 @@ WSL_DISTRO_NAME = Ubuntu-20.04
 
 # Directories
 
-# . (device 2080, inode 81371): 17 files, no impossibilities.
+# . (device 2080, inode 81371): 18 files, no impossibilities.
 
-# 17 files, no impossibilities in 1 directories.
+# 18 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -175,10 +177,17 @@ all:
 #  Modification time never checked.
 #  File has not been updated.
 
+test-coverage:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 8):
+	NODE_OPTIONS=--experimental-vm-modules npx jest --coverage
+
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-19 16:30:30.129324
+#  Last modified 2022-08-20 16:37:16.4538708
 #  File has been updated.
 #  Successfully updated.
 
@@ -187,6 +196,8 @@ test:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
+#  recipe to execute (from 'Makefile', line 6):
+	NODE_OPTIONS=--experimental-vm-modules npx jest
 
 # Not a target:
 .DEFAULT:
@@ -209,21 +220,19 @@ install:
 	npm install
 
 # files hash-table stats:
-# Load=8/1024=1%, Rehash=0, Collisions=0/19=0%
+# Load=9/1024=1%, Rehash=0, Collisions=0/20=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 26 / storage = 232 B / avg = 8 B
-# current buf: size = 8162 B / used = 232 B / count = 26 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 28 / storage = 256 B / avg = 9 B
+# current buf: size = 8162 B / used = 256 B / count = 28 / avg = 9 B
 
-# strcache performance: lookups = 33 / hit rate = 21%
+# strcache performance: lookups = 38 / hit rate = 26%
 # hash-table stats:
-# Load=26/8192=0%, Rehash=0, Collisions=1/33=3%
-# Finished Make data base on Sat Aug 20 15:14:45 2022
+# Load=28/8192=0%, Rehash=0, Collisions=1/38=3%
+# Finished Make data base on Mon Aug 22 19:05:33 2022
 
  
-make: *** No rule to make target 'all'.  Stop.
-

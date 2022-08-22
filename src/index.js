@@ -1,8 +1,6 @@
 import _ from 'lodash';
-import fs from 'fs';
-import path from 'path';
+import parser from './parser.js';
 
-const prepareFile = (file) => JSON.parse(fs.readFileSync(path.resolve(process.cwd(), file)));
 const copyKeys = (file1, file2) => _.sortBy(_.union(Object.keys(file1), Object.keys(file2)));
 
 const diffLogic = (file1, file2, keys) => {
@@ -26,6 +24,6 @@ const checkDiff = (file1, file2) => {
   return result;
 };
 
-const genDiff = (path1, path2) => checkDiff(prepareFile(path1), prepareFile(path2));
+const genDiff = (path1, path2) => checkDiff(parser(path1), parser(path2));
 
 export default genDiff;
